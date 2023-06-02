@@ -1,0 +1,43 @@
+server:
+  port: 8089
+
+  tomcat:
+    accesslog:
+      enabled: true
+      file-date-format: .yyyy-MM-dd
+      suffix: .log
+      prefix: access_log
+      directory: tomcat_log
+      pattern: common
+    basedir: ./logs/
+
+
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/gptdb
+    username: sa
+    password: ifajefiafkie
+  h2:
+    console:
+      enabled: true
+      path: /h2management
+      settings:
+        web-allow-others: true
+
+  #  自动生成数据库表
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+#替换成自己的内容
+openai:
+  gptkey: your gpt key
+
+#替换成自己的内容
+weixin:
+  appid: test
+  secret: test
+  token: test
